@@ -3,11 +3,10 @@
 const { exec } = require("child_process");
 const { readFileSync, writeFileSync } = require("fs");
 
-const regex = /(feat|fix|chore|refactor|test)\/(\D+-\d+)/g;
+const regex = /(feat|fix|chore|refactor|test)\/(\D{2,}-\d+)/g;
 /**
  *
  * @param {string} branch
- * @returns
  */
 function prepare_commit_message(branch) {
   const components = branch.match(regex);
